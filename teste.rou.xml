@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/routes_file.xsd">
+
+    <routeDistribution id="rotas_Norte">
+        <route id="n_reto"  edges="lane_N_to_S -E8"  probability="0.70"/>
+        <route id="n_dobra" edges="lane_N_to_S -E70" probability="0.30"/>
+    </routeDistribution>
+
+    <routeDistribution id="rotas_Sul">
+        <route id="s_reto"  edges="lane_S_to_N -E9"   probability="0.70"/>
+        <route id="s_dobra" edges="lane_S_to_N E7.94" probability="0.30"/>
+    </routeDistribution>
+
+    <routeDistribution id="rotas_Esquerda">
+        <route id="l_reto"  edges="lane_L_to_O E7.94" probability="0.70"/>
+        <route id="l_dobra" edges="lane_L_to_O -E8"   probability="0.30"/>
+    </routeDistribution>
+
+    <routeDistribution id="rotas_Direita">
+        <route id="o_reto"  edges="lane_O_to_L -E70" probability="0.70"/>
+        <route id="o_dobra" edges="lane_O_to_L -E9"  probability="0.30"/>
+    </routeDistribution>
+
+
+    <flow id="madrugada_N" begin="0.00" end="600.00" perHour="60.00" route="rotas_Norte"/>
+    <flow id="madrugada_S" begin="0.00" end="600.00" perHour="60.00" route="rotas_Sul"/>
+    <flow id="madrugada_L" begin="0.00" end="600.00" perHour="40.00" route="rotas_Esquerda"/>
+    <flow id="madrugada_O" begin="0.00" end="600.00" perHour="40.00" route="rotas_Direita"/>
+
+    <flow id="pico_m_N" begin="600.00" end="1500.00" perHour="1200.00" route="rotas_Norte"/>
+    <flow id="pico_m_S" begin="600.00" end="1500.00" perHour="1200.00" route="rotas_Sul"/>
+    <flow id="pico_m_L" begin="600.00" end="1500.00" perHour="300.00"  route="rotas_Esquerda"/>
+    <flow id="pico_m_O" begin="600.00" end="1500.00" perHour="300.00"  route="rotas_Direita"/>
+
+    <flow id="comercial_N" begin="1500.00" end="2400.00" perHour="500.00" route="rotas_Norte"/>
+    <flow id="comercial_S" begin="1500.00" end="2400.00" perHour="500.00" route="rotas_Sul"/>
+    <flow id="comercial_L" begin="1500.00" end="2400.00" perHour="500.00" route="rotas_Esquerda"/>
+    <flow id="comercial_O" begin="1500.00" end="2400.00" perHour="500.00" route="rotas_Direita"/>
+
+    <flow id="pico_t_N" begin="2400.00" end="3600.00" perHour="250.00"  route="rotas_Norte"/>
+    <flow id="pico_t_S" begin="2400.00" end="3600.00" perHour="250.00"  route="rotas_Sul"/>
+    <flow id="pico_t_L" begin="2400.00" end="3600.00" perHour="1400.00" route="rotas_Esquerda"/>
+    <flow id="pico_t_O" begin="2400.00" end="3600.00" perHour="1400.00" route="rotas_Direita"/>
+
+</routes>

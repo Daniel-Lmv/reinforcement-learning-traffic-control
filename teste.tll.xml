@@ -1,0 +1,9 @@
+<additionals>
+    <tlLogic id="clusterJ13_J15" type="static" programID="0" offset="0">
+        <phase duration="42" state="GGrrGGrr"/>
+        <phase duration="3"  state="yyrryyrr"/>
+        <phase duration="42" state="rrGGrrGG"/>
+        <phase duration="3"  state="rryyrryy"/>
+    </tlLogic>
+
+</additionals>

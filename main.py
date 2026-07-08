@@ -5,15 +5,12 @@ import numpy as np
 import random
 import traci  # Interface de comunicação com o SUMO
 
-# ==============================================================================
-# CONFIGURAÇÕES ADAPTADAS AOS SEUS ARQUIVOS XML
-# ==============================================================================
 MAX_FILA = 30
 MAX_TEMPO = 60
 STATE_DIM = 5
 ACTION_DIM = 5
 
-ID_SEMAFORO = "clusterJ13_J15"  # ID extraído do seu teste.net.xml
+ID_SEMAFORO = "clusterJ13_J15" 
 
 # Arquitetura da Rede Neural
 class QNetwork(torch.nn.Module):
@@ -39,21 +36,16 @@ def normalizar_estado(state):
         min(1.0, tempo_desde_troca / 20.0)
     ], dtype=np.float32)
 
-# ==============================================================================
-# CARREGAMENTO DO MODELO OTIMIZADO
-# ==============================================================================
+# CARREGAMENTO DO MODELO
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 policy_net = QNetwork(STATE_DIM, ACTION_DIM).to(device)
 policy_net.load_state_dict(torch.load("best_traffic_dqn.pt", map_location=device))
 policy_net.eval()
 
-# ==============================================================================
-# INICIALIZAÇÃO DO SUMO COM A SUA CONFIGURAÇÃO
-# ==============================================================================
+# INICIALIZAÇÃO DO SUMO
 sumo_cmd = ["sumo-gui", "-c", "teste.sumocfg"]
 traci.start(sumo_cmd)
 
-# Estados lógicos iniciais correspondentes ao treino
 fase_atual = 0  # No treino: 0 = NS Verde, 1 = LO Verde
 tempo_V = 25    
 tempo_desde_troca = 10
@@ -64,7 +56,7 @@ step_count = 0
 try:
     while traci.simulation.getMinExpectedNumber() > 0:
         
-        # 1. Contagem exata de carros parados usando os IDs reais do seu XML
+        # 1. Contagem exata de carros parados
         fila_NS = (traci.lane.getLastStepHaltingNumber("lane_N_to_S_0") + 
                    traci.lane.getLastStepHaltingNumber("lane_S_to_N_0"))
                    
@@ -84,12 +76,10 @@ try:
         if action == 1 and fase_atual != 0:
             fase_atual = 0
             tempo_desde_troca = 0
-            # Mapeamento: Fase 2 do seu XML ativa o Verde para Norte-Sul
             traci.trafficlight.setPhase(ID_SEMAFORO, 2) 
         elif action == 2 and fase_atual != 1:
             fase_atual = 1
             tempo_desde_troca = 0
-            # Mapeamento: Fase 0 do seu XML ativa o Verde para Leste-Oeste
             traci.trafficlight.setPhase(ID_SEMAFORO, 0)
         elif action == 3:
             tempo_V = min(MAX_TEMPO, tempo_V + 5)
@@ -98,7 +88,6 @@ try:
         else:
             tempo_desde_troca += 1
             
-        # 5. Executa 1 passo lógico no simulador gráfico
         traci.simulationStep()
         step_count += 1
         

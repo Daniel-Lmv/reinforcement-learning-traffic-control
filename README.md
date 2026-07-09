@@ -47,16 +47,17 @@ smart-traffic-light-dqn/
 │   └── training.ipynb
 │
 ├── config/
-│   ├── teste.sumocfg
-│   ├── teste.net.xml
-│   ├── teste.rou.xml
-│   └── teste.tll.xml
+│   ├── intersection.sumocfg
+│   ├── intersection.net.xml
+│   ├── intersection.rou.xml
+│   └── traffic_lights.tll.xml
 │
 ├── src/
 │   └── main.py
 │
 ├── assets/
-│   ├── architecture.png
+│   ├── architecture.svg
+|   ├── Reinforcement Learning Loop.svg
 │   ├── simulation.gif
 │   └── convergence.png
 │
@@ -69,24 +70,9 @@ smart-traffic-light-dqn/
 
 # ⚙️ System Architecture
 
-```text
-              Traffic Simulation (SUMO)
-                        │
-                        ▼
-             Traffic State Extraction
-                        │
-                        ▼
-              Deep Q-Network (PyTorch)
-                        │
-                        ▼
-             Optimal Traffic Light Action
-                        │
-                        ▼
-            Traffic Signal Phase Update
-                        │
-                        ▼
-                 SUMO Simulation
-```
+<p align="center">
+  <img src="assets/architecture.svg" width="500">
+</p>
 
 ---
 
@@ -101,6 +87,10 @@ At each simulation step the agent:
 3. Selects the action with the highest expected reward.
 4. Updates the traffic signal.
 5. Receives a new state and repeats the process.
+
+<p align="center">
+  <img src="assets/Reinforcement Learning Loop.svg" width="500">
+</p>
 
 ---
 

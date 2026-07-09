@@ -71,7 +71,7 @@ smart-traffic-light-dqn/
 # ⚙️ System Architecture
 
 <p align="center">
-  <img src="assets/architecture.svg" width="500">
+  <img src="assets/architecture.svg" width="150%">
 </p>
 
 ---
@@ -89,7 +89,7 @@ At each simulation step the agent:
 5. Receives a new state and repeats the process.
 
 <p align="center">
-  <img src="assets/Reinforcement Learning Loop.svg" width="500">
+  <img src="assets/Reinforcement Learning Loop.svg" width="100%">
 </p>
 
 ---

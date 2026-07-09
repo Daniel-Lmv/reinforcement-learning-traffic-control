@@ -10,6 +10,14 @@ A Deep Reinforcement Learning approach for adaptive traffic signal control using
 
 Instead of using fixed traffic light cycles, the agent continuously observes traffic conditions and learns to select the optimal signal phase to reduce congestion and improve traffic flow.
 
+<p align="center">
+  <img src="assets/simulation.gif" width="85%">
+</p>
+
+<p align="center">
+<b>Deep Q-Network agent controlling a traffic intersection in SUMO.</b>
+</p>
+
 ---
 
 # 📖 Overview

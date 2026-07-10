@@ -20,7 +20,7 @@ Instead of using fixed traffic light cycles, the agent continuously observes tra
 
 ---
 
-# 📖 Overview
+## 📖 Overview
 
 Traditional traffic lights operate with predefined timing plans that cannot adapt to changing traffic conditions.
 
@@ -30,7 +30,7 @@ The trained model receives the current traffic state, predicts the expected rewa
 
 ---
 
-# ✨ Features
+## ✨ Features
 
 - Deep Reinforcement Learning (DQN)
 - PyTorch Neural Network
@@ -42,7 +42,7 @@ The trained model receives the current traffic state, predicts the expected rewa
 
 ---
 
-# 🏗 Project Structure
+## 🏗 Project Structure
 
 ```text
 smart-traffic-light-dqn/
@@ -76,7 +76,7 @@ smart-traffic-light-dqn/
 
 ---
 
-# ⚙️ System Architecture
+## ⚙️ System Architecture
 
 <p align="center">
   <img src="assets/architecture.svg" width="150%">
@@ -84,7 +84,7 @@ smart-traffic-light-dqn/
 
 ---
 
-# 🧠 Deep Reinforcement Learning
+## 🧠 Deep Reinforcement Learning
 
 The project uses a **Deep Q-Network (DQN)** to approximate the optimal action-value function.
 
@@ -102,7 +102,7 @@ At each simulation step the agent:
 
 ---
 
-# 📊 State Representation
+## 📊 State Representation
 
 The neural network receives information extracted from the SUMO simulation, including:
 
@@ -116,7 +116,7 @@ These features describe the environment observed by the reinforcement learning a
 
 ---
 
-# 🎯 Action Space
+## 🎯 Action Space
 
 The agent can decide whether to:
 
@@ -127,7 +127,7 @@ Future versions may include dynamic green time adjustment.
 
 ---
 
-# 🛠 Technologies
+## 🛠 Technologies
 
 - Python
 - PyTorch
@@ -137,7 +137,7 @@ Future versions may include dynamic green time adjustment.
 
 ---
 
-# 🚀 Installation
+## 🚀 Installation
 
 Clone the repository.
 
@@ -165,7 +165,7 @@ Configure the SUMO_HOME environment variable.
 
 ---
 
-# ▶ Running
+## ▶ Running
 
 Start the simulation.
 
@@ -177,7 +177,7 @@ The trained model (`best_traffic_dqn.pt`) will automatically be loaded.
 
 ---
 
-# 📈 Results
+## 📈 Results
 
 The trained Deep Q-Network learns to adapt traffic signal decisions according to the observed traffic conditions, reducing congestion compared to static traffic light control.
 
@@ -190,7 +190,7 @@ Future versions will include:
 
 ---
 
-# 🔬 Future Improvements
+## 🔬 Future Improvements
 
 - Double DQN
 - Dueling DQN
@@ -202,7 +202,7 @@ Future versions will include:
 
 ---
 
-# 📚 References
+## 📚 References
 
 - Mnih et al. (2015). Human-level control through deep reinforcement learning.
 - SUMO - Simulation of Urban Mobility
@@ -210,7 +210,7 @@ Future versions will include:
 
 ---
 
-# 👨‍💻 Author
+## 👨‍💻 Author
 
 **Daniel Limaverde da Silva**
 
@@ -224,7 +224,7 @@ LinkedIn: www.linkedin.com/in/daniel-limaverde
 
 ---
 
-# ⭐ Support
+## ⭐ Support
 
 If you found this project useful, consider giving it a **star ⭐** on GitHub.
 
